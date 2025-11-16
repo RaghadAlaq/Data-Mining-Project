@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="11.0.001">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="11.0.001" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="read_excel" compatibility="11.0.001" expanded="true" height="68" name="Read Excel" width="90" x="112" y="85">
+        <parameter key="excel_file" value="C:\Users\tsma0\OneDrive\سطح المكتب\نما 419\healthcare_dataset copy.xlsx"/>
+        <parameter key="sheet_selection" value="sheet number"/>
+        <parameter key="sheet_number" value="1"/>
+        <parameter key="imported_cell_range" value="A1"/>
+        <parameter key="encoding" value="SYSTEM"/>
+        <parameter key="use_header_row" value="true"/>
+        <parameter key="header_row" value="1"/>
+        <parameter key="first_row_as_names" value="true"/>
+        <list key="annotations"/>
+        <parameter key="date_format" value=""/>
+        <parameter key="time_zone" value="Asia/Riyadh"/>
+        <parameter key="locale" value="English (United States)"/>
+        <parameter key="read_all_values_as_polynominal" value="false"/>
+        <list key="data_set_meta_data_information">
+          <parameter key="0" value="Name.true.polynominal.attribute"/>
+          <parameter key="1" value="Age.true.integer.attribute"/>
+          <parameter key="2" value="Gender.true.polynominal.attribute"/>
+          <parameter key="3" value="Blood Type.true.polynominal.attribute"/>
+          <parameter key="4" value="Medical Condition.true.polynominal.attribute"/>
+          <parameter key="5" value="Date of Admission.true.date.attribute"/>
+          <parameter key="6" value="Doctor.true.polynominal.attribute"/>
+          <parameter key="7" value="Hospital.true.polynominal.attribute"/>
+          <parameter key="8" value="Insurance Provider.true.polynominal.attribute"/>
+          <parameter key="9" value="Billing Amount.true.real.attribute"/>
+          <parameter key="10" value="Room Number.true.integer.attribute"/>
+          <parameter key="11" value="Admission Type.true.polynominal.attribute"/>
+          <parameter key="12" value="Discharge Date.true.date.attribute"/>
+          <parameter key="13" value="Medication.true.polynominal.attribute"/>
+          <parameter key="14" value="Test Results.true.polynominal.attribute"/>
+        </list>
+        <parameter key="read_not_matching_values_as_missings" value="false"/>
+      </operator>
+      <connect from_op="Read Excel" from_port="output" to_port="result 1"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+    </process>
+  </operator>
+</process>
